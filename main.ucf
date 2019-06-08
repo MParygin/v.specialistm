@@ -1,0 +1,98 @@
+CONFIG VCCAUX  = 3.3;
+
+
+# clock pin for Atlys rev C board
+
+NET "CLK" PERIOD = 10 ns HIGH 50 %;
+# Bank = 1, Pin name = IO_L42P_GCLK7_M1UDM, Type = GCLK, Sch name = GCLK
+NET "CLK" LOC = L15;
+NET "CLK" IOSTANDARD = LVCMOS33;
+
+
+# Bank = 1, Pin name = IO_L52N_M1DQ15, 	   Sch name = LD0
+NET "Led[0]" LOC = U18;
+NET "Led[0]" IOSTANDARD = LVCMOS33;
+# Bank = 1, Pin name = IO_L53P, 		 	   Sch name = LD1
+NET "Led[1]" LOC = M14;
+NET "Led[1]" IOSTANDARD = LVCMOS33;
+# Bank = 1, Pin name = IO_L53N_VREF, 	   Sch name = LD2
+NET "Led[2]" LOC = N14;
+NET "Led[2]" IOSTANDARD = LVCMOS33;
+# Bank = 1, Pin name = IO_L61P, 		 	   Sch name = LD3
+NET "Led[3]" LOC = L14;
+NET "Led[3]" IOSTANDARD = LVCMOS33;
+# Bank = 1, Pin name = IO_L61N, 		 	   Sch name = LD4
+NET "Led[4]" LOC = M13;
+NET "Led[4]" IOSTANDARD = LVCMOS33;
+# Bank = 0, Pin name = IO_L1P_HSWAPEN_0,	   Sch name = HSWAP/LD5
+NET "Led[5]" LOC = D4;
+NET "Led[5]" IOSTANDARD = LVCMOS33;
+# Bank = 1, Pin name = IO_L74N_DOUT_BUSY_1, Sch name = LD6
+NET "Led[6]" LOC = P16;
+NET "Led[6]" IOSTANDARD = LVCMOS33;
+# Bank = 2, Pin name = IO_L13P_M1_2,		   Sch name = M1/LD7
+NET "Led[7]" LOC = N12;
+NET "Led[7]" IOSTANDARD = LVCMOS33;
+
+
+
+# VIDEO OUT
+
+# Bank = 0, Pin name = IO_L8P,		  Sch name = TMDS-TX-CLK_P
+NET "TMDS[3]" LOC = B6;
+NET "TMDS[3]" IOSTANDARD = TMDS_33;
+# Bank = 0, Pin name = IO_L8N_VREF,	  Sch name = TMDS-TX-CLK_N
+NET "TMDSB[3]" LOC = A6;
+NET "TMDSB[3]" IOSTANDARD = TMDS_33;
+# Bank = 0, Pin name = IO_L11P,		  Sch name = TMDS-TX-0_P
+NET "TMDS[0]" LOC = D8;
+NET "TMDS[0]" IOSTANDARD = TMDS_33;
+# Bank = 0, Pin name = IO_L11N,		  Sch name = TMDS-TX-0_N
+NET "TMDSB[0]" LOC = C8;
+NET "TMDSB[0]" IOSTANDARD = TMDS_33;
+# Bank = 0, Pin name = IO_L10P,		  Sch name = TMDS-TX-1_P
+NET "TMDS[1]" LOC = C7;
+NET "TMDS[1]" IOSTANDARD = TMDS_33;
+# Bank = 0, Pin name = IO_L10N,		  Sch name = TMDS-TX-1_N
+NET "TMDSB[1]" LOC = A7;
+NET "TMDSB[1]" IOSTANDARD = TMDS_33;
+# Bank = 0, Pin name = IO_L33P,		  Sch name = TMDS-TX-2_P
+NET "TMDS[2]" LOC = B8;
+NET "TMDS[2]" IOSTANDARD = TMDS_33;
+# Bank = 0, Pin name = IO_L33N,		  Sch name = TMDS-TX-2_N
+NET "TMDSB[2]" LOC = A8;
+NET "TMDSB[2]" IOSTANDARD = TMDS_33;
+
+
+/*NET "BTN_RST_N" LOC = T15;
+NET "BTN_RST_N" IOSTANDARD = LVCMOS33;
+
+NET "btn<1>" LOC = "A10" | IOSTANDARD = LVCMOS33;  # Bank = 3, Pin name = IO_L1P, 	   		   Sch name = BTNU
+NET "btn<2>" LOC = "P4" | IOSTANDARD = LVCMOS33;  # Bank = 3, Pin name = IO_L2P, 	   		   Sch name = BTNL
+NET "btn<3>" LOC = "P3" | IOSTANDARD = LVCMOS33;  # Bank = 3, Pin name = IO_L2N, 	   		   Sch name = BTND
+*/
+/*NET "UartRx" LOC = "A16" | IOSTANDARD = LVCMOS33; # Bank = 0, Pin name = IO_L66N_SCP0, Sch name = USBB-RXD
+ 
+NET "fx2Clk_in"       LOC="C10"  | IOSTANDARD=LVTTL;   # IFCLK
+NET "fx2Addr_out<0>"  LOC="A14"  | IOSTANDARD=LVTTL;   # PA4/FIFOADR0
+NET "fx2Addr_out<1>"  LOC="B14"  | IOSTANDARD=LVTTL;   # PA5/FIFOADR1
+
+NET "fx2Data_io<0>"   LOC="A2"   | IOSTANDARD=LVTTL;   # PB0/FD0
+NET "fx2Data_io<1>"   LOC="D6"   | IOSTANDARD=LVTTL;   # PB1/FD1
+NET "fx2Data_io<2>"   LOC="C6"   | IOSTANDARD=LVTTL;   # PB2/FD2
+NET "fx2Data_io<3>"   LOC="B3"   | IOSTANDARD=LVTTL;   # PB3/FD3
+NET "fx2Data_io<4>"   LOC="A3"   | IOSTANDARD=LVTTL;   # PB4/FD4
+NET "fx2Data_io<5>"   LOC="B4"   | IOSTANDARD=LVTTL;   # PB5/FD5
+NET "fx2Data_io<6>"   LOC="A4"   | IOSTANDARD=LVTTL;   # PB6/FD6
+NET "fx2Data_io<7>"   LOC="C5"   | IOSTANDARD=LVTTL;   # PB7/FD7
+
+NET "fx2Read_out"     LOC="F13"  | IOSTANDARD=LVTTL;   # RDY0/SLRD
+NET "fx2OE_out"       LOC="A15"  | IOSTANDARD=LVTTL;   # PA2/SLOE
+NET "fx2GotData_in"   LOC="C15"  | IOSTANDARD=LVTTL;   # CTL2/FLAGC
+
+NET "fx2Write_out"    LOC="E13"  | IOSTANDARD=LVTTL;   # RDY1/SLWR
+NET "fx2GotRoom_in"   LOC="A9"   | IOSTANDARD=LVTTL;   # CTL1/FLAGB
+NET "fx2PktEnd_out"   LOC="C4"   | IOSTANDARD=LVTTL;   # PA6/PKTEND
+*/
+#NET "fx2Clk_in" TNM_NET = "fx2Clk_in";
+#TIMESPEC "TS_clk" = PERIOD "fx2Clk_in" 20 ns HIGH 50 %;
